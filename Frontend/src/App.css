@@ -1,0 +1,139 @@
+/* --- FIXING THE "BLUE SCREEN" & LAYOUT --- */
+.App-header {
+  background-color: #007bff; /* Bright Blue */
+  min-height: 80px;          /* Fixed height, not 100vh */
+  display: flex;
+  flex-direction: row;       /* Side-by-side layout */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.search-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+/* --- 3D ACCOUNT MENU --- */
+.account-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.account-trigger {
+  cursor: pointer;
+  padding: 10px 15px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.account-trigger:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- THE DROPDOWN CONTAINER --- */
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 220px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  
+  /* Hidden by default */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 1001;
+}
+
+/* Show on Hover */
+.account-menu:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* --- COLORFUL 3D BUTTONS INSIDE DROPDOWN --- */
+.dropdown p {
+  margin: 0;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  /* 3D Styling */
+  background: linear-gradient(145deg, #6c63ff, #4b45c6);
+  border-bottom: 4px solid #3e38a8;
+  transition: all 0.1s ease;
+}
+
+.dropdown p:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  border-bottom-width: 6px;
+}
+
+.dropdown p:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+}
+
+/* Red 3D Button for Logout */
+.dropdown p.logout {
+  background: linear-gradient(145deg, #ff4d4d, #cc0000);
+  border-bottom-color: #990000;
+}
+
+/* Dashboard Button (The orange one) */
+.dashboard-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #ff7a18, #ff3d00);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #c62800;
+  transition: all 0.1s ease;
+  margin-right: 15px;
+}
+
+.dashboard-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #c62800;
+}
+.dashboard-btn {
+  background: linear-gradient(145deg, #00c9ff, #92fe9d);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+}
